@@ -1,0 +1,166 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradien biru galaksi */
+    color: #ffffff;
+}
+header {
+    background: rgba(255, 255, 255, 0.1); /* Transparan untuk efek galaksi */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #ffffff; /* Warna teks putih */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    color: #ff6347; /* Warna saat hover */
+    transform: scale(1.1);
+}
+
+section {
+    padding: 40px;
+    margin: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Latar belakang gelap untuk kontras */
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0; /* Mulai dengan opacity 0 untuk animasi */
+    transform: translateY(20px); /* Mulai dengan posisi lebih rendah */
+}
+
+section.visible {
+    opacity: 1; /* Menampilkan elemen */
+    transform: translateY(0); /* Kembali ke posisi normal */
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+}
+
+h2 {
+    margin-top: 0;
+    color: #ff6347; /* Warna judul */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+button {
+    background: linear-gradient(145deg, #007bbf, #005f8b); /* Gradien untuk efek 3D */
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), 
+                -5px -5px 15px rgba(255, 255, 255, 0.2); /* Bayangan untuk efek 3D */
+    transition: all 0.3s ease; /* Transisi halus */
+    position: relative; /* Posisi relatif untuk efek */
+    overflow: hidden; /* Menghindari overflow */
+}
+
+button:hover {
+    transform: translateY(-5px); /* Angkat tombol saat hover */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4), 
+                -10px -10px 20px rgba(255, 255, 255, 0.3); /* Bayangan lebih dalam saat hover */
+}
+
+button:active {
+    transform: translateY(2px); /* Tekan tombol saat aktif */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), 
+                -5px -5px 15px rgba(255, 255, 255, 0.2); /* Kembali ke bayangan normal */
+}
+
+#contactForm {
+    margin-top: 20px;
+}
+
+#contactForm label {
+    display: block;
+    margin-bottom: 10px;
+    color: #ffffff; /* Warna label putih */
+}
+
+#contactForm input, #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+#contactForm#contactForm input:focus, #contactForm textarea:focus {
+    border-color: #007bbf; /* Warna border saat fokus */
+}
+
+#map {
+    height: 400px; /* Tinggi peta */
+    width: 100%; /* Lebar peta */
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Bayangan */
+    margin-top: 20px; /* Jarak atas */
+}
+
+/* Animasi untuk galeri */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gallery img {
+    width: calc(33.333% - 10px);
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Efek glow saat tombol aktif */
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    z-index: 0;
+}
+
+button:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Efek menyebar saat hover */
+}
+
+button span {
+    position: relative;
+    z-index: 1; /* Menempatkan teks di atas efek */
+}
